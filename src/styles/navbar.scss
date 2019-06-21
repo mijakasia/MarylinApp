@@ -1,0 +1,20 @@
+.menu-top {
+  &__navbar {
+    position: relative;
+    background-color: $green;
+    &.navbar-expand-sm {
+      justify-content: space-between;
+    }
+    .avatar {
+      &__img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        border: 5px solid $transparent-white;
+      }
+    }
+  }
+}

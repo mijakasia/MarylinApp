@@ -1,0 +1,8 @@
+.menu-top {
+  &__jumbotron {
+    // background: $sand url("./images/beach-sand-stones.jpg") no-repeat center center;
+    &.jumbotron {
+      margin-bottom: 0;
+    }
+  }
+}
