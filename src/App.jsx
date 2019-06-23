@@ -1,5 +1,6 @@
 import React from 'react';
 import App from './App.jsx';
+import Profile from './components/Profile.jsx';
 import { Router, Link, Redirect } from "@reach/router";
 
 import MenuTop from './MenuTop.jsx';
@@ -13,12 +14,6 @@ import './App.scss';
         <Profile path="/" />
         <Gallery path="/gallery" />
       </Router>
-    </div>
-  );
-
-  const Profile = () => (
-    <div>
-      <h2>Welcome</h2>
     </div>
   );
 
