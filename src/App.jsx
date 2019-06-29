@@ -1,7 +1,7 @@
 import React from 'react';
-import App from './App.jsx';
 import Profile from './components/Profile.jsx';
-import { Router, Link, Redirect } from "@reach/router";
+import { Router } from "@reach/router";
+import Gallery from './components/Gallery.jsx';
 
 import MenuTop from './MenuTop.jsx';
 
@@ -14,12 +14,6 @@ import './App.scss';
         <Profile path="/" />
         <Gallery path="/gallery" />
       </Router>
-    </div>
-  );
-
-  const Gallery = () => (
-    <div>
-      <h2>Dashboard</h2>
     </div>
   );
 
