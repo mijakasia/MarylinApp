@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import API_KEY from './ApiKey.jsx';
+import getPhotos from '../actions/getPhotos.js';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      photos: [],
-    };
-  }
-
   componentDidMount() {
-    const test2 = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=monroe%2Cmarylin&tag_mode=all&sort=date-posted-desc&per_page=9&content_type=1&format=json&nojsoncallback=1`;
-
-    fetch(test2)
-   .then(response => response.json())
-   .then(data => this.setState({photos: data.photos.photo}));
+    this.fillUpGallery();
   }
 
   render() {
+    console.log('props', this.props)
     return (
       <div className="gallery">
       {
-        this.state.photos.length > 0 &&
-        this.state.photos.map((photo, index) => {
+        this.props.photos.length > 0 &&
+        this.props.photos.map((photo, index) => {
           return <img
             key={index}
             className="img-thumbnail gallery__image"
@@ -32,7 +25,19 @@ class Gallery extends Component {
       </div>
     );
   }
-
+  fillUpGallery() {
+    this.props.getPhotos(API_KEY);
+  }
 }
+const mapDispatchToProps = (dispatch, state) => {
+    return {
+        getPhotos: (apiKey) => {dispatch(getPhotos(apiKey));},
+    };
+};
 
-export default Gallery;
+const mapStateToProps = (state) => ({
+    photos: state.photoReducer.photos,
+});
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Gallery));
