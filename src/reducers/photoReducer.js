@@ -2,13 +2,15 @@ const initialState = {
     photos: [],
 }
 
-const flickerReducer = (state = initialState, action) => {
+const photosReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_FLICKER_IMAGES':
+    case 'GET_PHOTOS_SUCCESS':
         return { ...state, photos: [...state.photos, ...action.photos] };
+    case 'GET_PHOTOS_FAILURE':
+        return {...state}
     default:
         return state;
   }
 };
 
-export default flickerReducer;
+export default photosReducer;

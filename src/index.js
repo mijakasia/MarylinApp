@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { Route, Router, Switch, Redirect } from 'react-router';
+import { Route, Router, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 
 import configureStore, { history } from './configureStore';
-import App from './App.jsx';
+import AppContainer from './AppContainer.jsx';
 import Profile from './components/Profile.jsx'
 import Gallery from './components/Gallery.jsx'
 
@@ -20,7 +20,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Router history={history}>
-        <Route path="/" history={history} render={App} />
+        <Route path="/" history={history} render={AppContainer} />
           <Switch>
             <Route path="/profile" history={history} component={Profile} />
             <Route path="/gallery" history={history} component={Gallery} />

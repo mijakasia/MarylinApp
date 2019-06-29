@@ -3,10 +3,10 @@ import React from 'react';
 import MenuTop from './MenuTop.jsx';
 import './App.scss';
 
-  const AppContainer = ({ props }) => (
+  const App = ({ props }) => (
     <div>
       <MenuTop/>
     </div>
   );
 
-export default AppContainer
+export default App
