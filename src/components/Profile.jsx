@@ -1,5 +1,5 @@
 import React from 'react';
-import MapMarker from './icons/mapMarker.jsx';
+import MapMarker from './assets/mapMarker.jsx';
 import classNames from 'classnames';
 
 const Profile = () => (

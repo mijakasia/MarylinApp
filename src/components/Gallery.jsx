@@ -18,6 +18,7 @@ class Gallery extends Component {
           return <img
             key={index}
             className="img-thumbnail gallery__image"
+            onClick={() => window.open(`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`)}
             src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} alt="marylin"/>
         })
       }

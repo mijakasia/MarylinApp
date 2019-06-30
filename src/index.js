@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { Route, Router, Switch } from 'react-router';
+import { Route, Router, Switch, Redirect } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 
 import configureStore, { history } from './configureStore';
@@ -26,6 +26,7 @@ ReactDOM.render(
           <Switch>
             <Route path="/profile" history={history} component={Profile} />
             <Route path="/gallery" history={history} component={Gallery} />
+            <Route render={() => <Redirect to="/profile" />} />
           </Switch>
           </MainContent>
       </Router>
