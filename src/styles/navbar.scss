@@ -18,7 +18,18 @@
     }
 
     .nav-item {
-      margin-right: 10px;
+      margin-right: 20px;
+      color: $white;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--active {
+        border: 1px solid $white;
+        border-radius: 50%;
+      }
     }
   }
 }
