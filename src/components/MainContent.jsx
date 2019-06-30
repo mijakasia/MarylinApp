@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-class MenuTop extends Component {
-
+class MainContent extends Component {
   render() {
     return (
       this.props.children
     );
   }
-
 }
 
-export default MenuTop;
+export default MainContent;
