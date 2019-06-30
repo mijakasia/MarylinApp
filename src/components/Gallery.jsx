@@ -10,7 +10,6 @@ class Gallery extends Component {
   }
 
   render() {
-    console.log('props', this.props)
     return (
       <div className="gallery">
       {

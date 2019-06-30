@@ -13,6 +13,7 @@ import Gallery from './components/Gallery.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import MainContent from './components/MainContent.jsx'
 
 const store = configureStore(/* provide initial state if any */)
 
@@ -21,10 +22,12 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <Router history={history}>
         <Route path="/" history={history} render={AppContainer} />
+        <MainContent>
           <Switch>
             <Route path="/profile" history={history} component={Profile} />
             <Route path="/gallery" history={history} component={Gallery} />
           </Switch>
+          </MainContent>
       </Router>
     </ConnectedRouter>
   </Provider>,
